@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ColorBox from "./ColorBox";
 import "./Palette.css";
+import seedColors from "./seedColors";
 
 class Palette extends Component {
   render() {
