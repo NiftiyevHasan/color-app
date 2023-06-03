@@ -14,7 +14,11 @@ const rootStyles = {
 };
 
 const colorsStyles = {
-  backgroundColor: "grey",
+  backgroundColor: "#dae1e4",
+  height: "150px",
+  width: "100%",
+  borderRadius: "5px",
+  overflow: "hidden",
 };
 
 const titleStyles = {
@@ -33,12 +37,27 @@ const emojiStyles = {
   fontSize: "1.5rem",
 };
 
-function MiniPalette(props) {
-  const { paletteName, emoji } = props;
+const miniColorStyles = {
+  height: "25%",
+  width: "20%",
+  display: "inline-block",
+  margin: "0 auto",
+  position: "relative",
+  marginButtom: "-3.5px",
+};
 
+function MiniPalette(props) {
+  const { paletteName, emoji, colors } = props;
+  const miniColorBoxes = colors.map((color) => (
+    <Box
+      sx={miniColorStyles}
+      style={{ backgroundColor: color.color }}
+      key={color.name}
+    ></Box>
+  ));
   return (
     <Box sx={rootStyles}>
-      <Box sx={colorsStyles}></Box>
+      <Box sx={colorsStyles}>{miniColorBoxes}</Box>
       <h5>
         <Box component="span" sx={titleStyles}>
           {paletteName}

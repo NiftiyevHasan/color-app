@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 
 const rootStyles = {
   backgroundColor: "blue",
-  heigh: "100%",
+  heigh: "100vh",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "center",
@@ -42,7 +42,7 @@ class PaletteList extends Component {
           </nav>
           <Box sx={palettesStyles}>
             {palettes.map((palette) => (
-              <MiniPalette {...palette} />
+              <MiniPalette {...palette} key={palette.id} />
             ))}
           </Box>
         </Box>
