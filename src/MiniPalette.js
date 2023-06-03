@@ -43,7 +43,7 @@ const miniColorStyles = {
   display: "inline-block",
   margin: "0 auto",
   position: "relative",
-  marginButtom: "-3.5px",
+  marginBottom: "-3.5px",
 };
 
 function MiniPalette(props) {
@@ -56,7 +56,7 @@ function MiniPalette(props) {
     ></Box>
   ));
   return (
-    <Box sx={rootStyles}>
+    <Box sx={rootStyles} onClick={props.handleClick}>
       <Box sx={colorsStyles}>{miniColorBoxes}</Box>
       <h5>
         <Box component="span" sx={titleStyles}>
