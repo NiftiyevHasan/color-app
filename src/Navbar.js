@@ -54,7 +54,7 @@ class Navbar extends Component {
           open={this.state.open}
           autoHideDuration={3000}
           message={
-            <span id="message-id">{`Format changed to ${this.state.format}`}</span>
+            <span id="message-id">{`Format changed to ${this.state.format}.toUpperCase()`}</span>
           }
           ContentProps={{ "aria-describedby": "message-id" }}
           onClose={this.closeSnackbar}
