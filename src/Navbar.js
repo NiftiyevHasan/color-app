@@ -24,24 +24,26 @@ class Navbar extends Component {
     this.setState({ open: false });
   }
   render() {
-    const { level, changeLevel } = this.props;
+    const { level, changeLevel, showSlider } = this.props;
     return (
       <header className="Navbar">
         <div className="logo">
           <a href="/"> colorUI </a>
         </div>
-        <div className="slider-container">
-          <span> Level {level}</span>
-          <div className="slider">
-            <Slider
-              defaultValue={level}
-              min={100}
-              max={900}
-              step={100}
-              onAfterChange={changeLevel}
-            />
+        {showSlider && (
+          <div className="slider-container">
+            <span> Level {level}</span>
+            <div className="slider">
+              <Slider
+                defaultValue={level}
+                min={100}
+                max={900}
+                step={100}
+                onAfterChange={changeLevel}
+              />
+            </div>
           </div>
-        </div>
+        )}
         <div className="select-container">
           <Select value={this.state.format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
@@ -54,7 +56,7 @@ class Navbar extends Component {
           open={this.state.open}
           autoHideDuration={3000}
           message={
-            <span id="message-id">{`Format changed to ${this.state.format}.toUpperCase()`}</span>
+            <span id="message-id">{`Format changed to ${this.state.format}`}</span>
           }
           ContentProps={{ "aria-describedby": "message-id" }}
           onClose={this.closeSnackbar}
