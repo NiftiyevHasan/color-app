@@ -30,7 +30,3 @@ class PaletteList extends Component {
   }
 }
 export default PaletteList;
-
-//  <Link to={`/palette/${palette.id}`}>
-//    <p>{palette.paletteName}</p>
-//  </Link>;

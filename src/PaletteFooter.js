@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./styles/PaletteFooterStyles.js";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 function PaletteFooter(props) {
   const { paletteName, emoji } = props;
   return (
-    <Typography sx={styles.paletteFooter}>
+    <Box sx={styles.paletteFooter}>
       {paletteName}
       <Typography sx={styles.emoji}>{emoji}</Typography>
-    </Typography>
+    </Box>
   );
 }
 
