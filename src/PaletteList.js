@@ -1,34 +1,7 @@
 import React, { Component } from "react";
 import MiniPalette from "./MiniPalette";
 import { Box } from "@mui/material";
-
-const rootStyles = {
-  backgroundColor: "blue",
-  heigh: "100vh",
-  display: "flex",
-  alignItems: "flex-start",
-  justifyContent: "center",
-};
-const containerStyles = {
-  width: "50%",
-  display: "flex",
-  alignItems: "flex-start",
-  flexDirection: "column",
-  flexWrap: "wrap",
-};
-const navStyles = {
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
-  color: "#fff",
-};
-const palettesStyles = {
-  boxSizing: "border-box",
-  width: "100%",
-  display: "grid",
-  gridTemplateColumns: "repeat(3,30%)",
-  gridGap: "5%",
-};
+import styles from "./styles/PaletteListStyles.js";
 
 class PaletteList extends Component {
   linkToPalette(id) {
@@ -37,12 +10,12 @@ class PaletteList extends Component {
   render() {
     const { palettes } = this.props;
     return (
-      <Box sx={rootStyles}>
-        <Box sx={containerStyles}>
-          <nav sx={navStyles}>
+      <Box sx={styles.root}>
+        <Box sx={styles.container}>
+          <nav sx={styles.nav}>
             <h1>React Colors</h1>
           </nav>
-          <Box sx={palettesStyles}>
+          <Box sx={styles.palettes}>
             {palettes.map((palette) => (
               <MiniPalette
                 {...palette}

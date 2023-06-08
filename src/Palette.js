@@ -1,29 +1,9 @@
 import React, { Component } from "react";
 import ColorBox from "./ColorBox";
-import "./Palette.css";
 import Navbar from "./Navbar";
 import PaletteFooter from "./PaletteFooter";
 import { Box } from "@mui/material";
-
-// Styles
-const palette = {
-  height: "100vh",
-  display: "flex",
-  flexDirection: "column",
-};
-
-const paletteColors = {
-  height: "90%",
-};
-
-const paletteFooter = {
-  backgroundColor: "white",
-  height: "5vh",
-  display: "flex",
-  justifyContent: "flex-end",
-  alignItems: "center",
-  fontWeight: "bold",
-};
+import styles from "./styles/PaletteStyles.js";
 
 class Palette extends Component {
   constructor(props) {
@@ -52,7 +32,7 @@ class Palette extends Component {
       />
     ));
     return (
-      <Box sx={palette}>
+      <Box sx={styles.palette}>
         <Navbar
           changeLevel={this.changeLevel}
           level={level}
@@ -60,7 +40,7 @@ class Palette extends Component {
           showSlider
         />
 
-        <Box sx={paletteColors}>{colorBoxes}</Box>
+        <Box sx={styles.colors}>{colorBoxes}</Box>
         <PaletteFooter paletteName={paletteName} emoji={emoji} />
       </Box>
     );
