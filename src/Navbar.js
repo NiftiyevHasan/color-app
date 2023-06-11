@@ -29,7 +29,7 @@ class Navbar extends Component {
     return (
       <header style={styles.Navbar}>
         <Box sx={styles.logo}>
-          <a href="/"> colorUI </a>
+          <a href="/"> color UI </a>
         </Box>
         {showSlider && (
           <Box>

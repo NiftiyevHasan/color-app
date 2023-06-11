@@ -20,7 +20,7 @@ const styles = {
     color: "white",
     alignItems: "center",
     "& a": {
-      color: "white !important",
+      color: "white",
       textDecoration: "none",
     },
   },
